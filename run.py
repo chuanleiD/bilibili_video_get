@@ -36,6 +36,7 @@ def run():
     # 下载m4s文件
     audio_path = f"output/audio_{video_id}.mp4"
     video_path = f"output/video_{video_id}.mp4"
+    output_path = f"output/merge_{video_id}.mp4"
 
     for req in req_list:
         if len(req['name']) == 5:
@@ -47,11 +48,11 @@ def run():
     merge_audio_video(
         video_path=video_path,
         audio_path=audio_path,
-        output_path=f"output/merge_{video_id}.mp4"
+        output_path=output_path
     )
+    print(f"合并完成：{output_path}")
+
 
 # 使用示例
 if __name__ == "__main__":
     run()
-
-

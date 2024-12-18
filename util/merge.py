@@ -25,6 +25,7 @@ import ffmpeg
 
 def merge_audio_video(video_path, audio_path, output_path):
     try:
+        print(f"正在合并：{output_path}，请等待")
         # 合并音频和视频
         video = ffmpeg.input(video_path)
         audio = ffmpeg.input(audio_path)
@@ -39,7 +40,6 @@ def merge_audio_video(video_path, audio_path, output_path):
 
         # 运行ffmpeg命令
         ffmpeg.run(stream, overwrite_output=True)
-        print(f"合并完成：{output_path}")
         return True
 
     except Exception as e:

@@ -19,6 +19,7 @@ def download_m4s(url, output_filename):
     }
 
     try:
+        print(f"正在下载：{output_filename}，请等待")
         # 发送请求并获取响应
         response = requests.get(url, headers=headers, stream=True)
         response.raise_for_status()  # 检查是否请求成功
