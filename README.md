@@ -1,6 +1,6 @@
 ## bilibili_video_get
 
-一个本地端的，bilibili下载工具
+一个本地端的，bilibili视频下载工具
 
 ### 一、实现流程
 
@@ -44,3 +44,15 @@
 
 [chuanleiD/pystand_go: 一款使用go重写的pystand，用于python项目在windows下更便捷的分发](https://github.com/chuanleiD/pystand_go)
 
+如何运行：
+
+1. 在releases中下载解压
+2. 运行bilibili_video_get.exe
+3. 首先输入 bv 号，例如：BV1BQkcYLExZ
+4. 然后输入你的bilibili cookie。（cookie短期内一直有效，如果你最近输入过，可以输入p跳过）
+
+如何获得你的cookie：
+
+
+
+![image-20241218173307341](D:\work_save\typora_picture\0b34127300cdc74196371b7f8e20b5de.png) 
