@@ -23,7 +23,7 @@ def file_init():
 def input_msg() -> (str, str):
     while True:
         video_id = input("请输入B站视频ID：")
-        if len(video_id) == 12:
+        if len(video_id) == 12 or len(video_id) == 11:
             break
         else:
             print("输入格式不对，请重试")

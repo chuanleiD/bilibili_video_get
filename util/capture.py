@@ -31,8 +31,12 @@ class NetworkCapture:
                 # 只处理网络请求
                 if 'Network.requestWillBeSent' == log['method']:
                     request = log['params']['request']
+                    
                     req_name = request['url'].split('/')[-1].split('?')[0].split('-')[-1].split('.')[0]
                     if request['url'].startswith('https://cn-sh-fx') and req_name not in log_list:
+                        print("-if-----------")
+                        print(request['url'])
+                        print("-if-----------")
                         log_list.append(req_name)
                         self.requests.append({
                             'name': req_name,
@@ -42,8 +46,12 @@ class NetworkCapture:
                         })
             except Exception as e:
                 print(f"处理日志时出错: {str(e)}")
-
-        return self.requests
+        
+        print("-log_list-----------")
+        print(log_list[-2:])
+        print("-self.requests-----------")
+        print(self.requests[-2:])
+        return self.requests[-2:]
 
 
     def save_requests(self, filename=None):

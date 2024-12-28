@@ -96,11 +96,11 @@ def apply_cookies_to_driver(driver: webdriver.Chrome, cookies: List[Dict]) -> No
 
             try:
                 driver.add_cookie(cookie_dict)
-                print(f"成功添加cookie: {cookie.get('name')}")
             except Exception as e:
                 print(f"添加cookie '{cookie.get('name')}' 失败: {str(e)}")
                 continue
 
+        print("cookies载入成功...")
         driver.refresh()  # 刷新网页,cookies才成功
         time.sleep(1 + random.uniform(0.1, 0.9))
         print("Cookie已成功应用到浏览器")
@@ -129,7 +129,7 @@ def first_login(driver: webdriver.Chrome, url: str, cookie_str=None) -> None:
         cookies = load_cookies_from_file(cookies_path)
         apply_cookies_to_driver(driver, cookies)
         # 清空之前的日志
-        driver.get_log('performance')  # 获取并丢弃之前的日志
+        # driver.get_log('performance')  # 获取并丢弃之前的日志
     else:
         print("未找到cookie文件, 请手动登录")
 
